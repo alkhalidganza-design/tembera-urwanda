@@ -1,71 +1,162 @@
-<script setup>
-import heroImage from '../assets/your-image.jpg'
-
-// Sample data for Rwanda's top destinations
-const destinations = [
-  {
-    id: 1,
-    title: 'Volcanoes National Park',
-    description: 'Home to the magnificent mountain gorillas and rich bamboo forests.',
-    tag: 'Wildlife'
-  },
-  {
-    id: 2,
-    title: 'Nyungwe Forest',
-    description: 'One of the oldest rainforests in Africa, famous for canopy walks.',
-    tag: 'Adventure'
-  },
-  {
-    id: 3,
-    title: 'Lake Kivu',
-    description: 'Relax by the beautiful inland sea with stunning emerald green waterfronts.',
-    tag: 'Relaxation'
-  }
-]
-</script>
-
+```vue
 <template>
-  <div>
-    <section
-      class="relative h-screen bg-cover bg-center flex items-center justify-center text-white"
-      :style="{ backgroundImage: `url(${heroImage})` }"
-    >
-      <div class="absolute inset-0 bg-black/40"></div>
+  <section class="bg-white text-green-900 py-16 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
 
-      <div class="relative text-center px-4">
-        <h1 class="text-5xl font-bold mb-4">Welcome to Rwanda</h1>
-        <p class="text-xl mb-8 text-green-300">The Land of a Thousand Hills</p>
-      </div>
-    </section>
+      <!-- Heading -->
+      <div class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+          Discover the heart of our tour experience
+        </h1>
 
-    <section class="py-16 px-4 bg-gray-50">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-          Explore Key Destinations
-        </h2>
+        <p class="mt-5 text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-8">
+          We connect travelers with authentic destinations across Rwanda,
+          blending nature, culture and comfort into every route.
+          Our goal is to make your tour feel effortless, inspiring and unforgettable.
+        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div 
-            v-for="place in destinations" 
-            :key="place.id"
-            class="group relative bg-white rounded-2xl p-6 shadow-md transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl border border-gray-100"
+        <!-- Main Buttons -->
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <button
+            class="bg-green-700 text-white px-6 py-3 rounded-full font-medium shadow-md hover:bg-green-800 transition duration-300"
           >
-            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mb-4">
-              {{ place.tag }}
-            </span>
+            Book a Tour
+          </button>
 
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300">
-              {{ place.title }}
-            </h3>
-
-            <p class="text-gray-600">
-              {{ place.description }}
-            </p>
-
-            <div class="absolute bottom-0 left-0 h-1 w-0 bg-green-500 rounded-b-2xl transition-all duration-300 group-hover:w-full"></div>
-          </div>
+          <button
+            class="border border-green-700 text-green-700 px-6 py-3 rounded-full font-medium hover:bg-green-700 hover:text-white transition duration-300"
+          >
+            Explore Destinations
+          </button>
         </div>
       </div>
-    </section>
-  </div>
+
+      <!-- Cards -->
+      <div class="grid gap-6 md:grid-cols-4 py-4">
+
+        <!-- Mission -->
+        <article class="group rounded-3xl border border-green-100 bg-green-50 shadow-sm overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-3 hover:shadow-xl hover:bg-white hover:border-green-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              :src="missionImage"
+              alt="Mission"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
+
+          <div class="p-6">
+            <h2 class="text-xl font-semibold text-green-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
+              Our Mission
+            </h2>
+
+            <p class="text-gray-600 leading-7 mb-5">
+              To offer guided tours that highlight the best of every region,
+              while supporting local communities and sustainable travel.
+            </p>
+
+            <button
+              class="w-full bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition duration-300"
+            >
+              Learn More
+            </button>
+          </div>
+        </article>
+
+        <!-- Values -->
+        <article class="group rounded-3xl border border-green-100 bg-green-50 shadow-sm overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-3 hover:shadow-xl hover:bg-white hover:border-green-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              :src="valuesImage"
+              alt="Values"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
+
+          <div class="p-6">
+            <h2 class="text-xl font-semibold text-green-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
+              Our Values
+            </h2>
+
+            <p class="text-gray-600 leading-7 mb-5">
+              Respect, quality and curiosity shape every itinerary.
+              We choose local partners and meaningful experiences for every traveler.
+            </p>
+
+            <button
+              class="w-full bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition duration-300"
+            >
+              Read More
+            </button>
+          </div>
+        </article>
+
+        <!-- Offer -->
+        <article class="group rounded-3xl border border-green-100 bg-green-50 shadow-sm overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-3 hover:shadow-xl hover:bg-white hover:border-green-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              :src="tourImage"
+              alt="Tours"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
+
+          <div class="p-6">
+            <h2 class="text-xl font-semibold text-green-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
+              What We Offer
+            </h2>
+
+            <p class="text-gray-600 leading-7 mb-5">
+              Tailored tours, expert guides and seamless planning so you can focus on exploring landscapes, culture and local stories.
+            </p>
+
+            <button
+              class="w-full bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition duration-300"
+            >
+              View Packages
+            </button>
+          </div>
+        </article>
+
+        <!-- Canopy -->
+        <article class="group rounded-3xl border border-green-100 bg-green-50 shadow-sm overflow-hidden transition-all duration-300 ease-in-out transform hover:-translate-y-3 hover:shadow-xl hover:bg-white hover:border-green-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              :src="canopyImage"
+              alt="Canopy"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
+
+          <div class="p-6">
+            <h2 class="text-xl font-semibold text-green-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
+              The Canopy
+            </h2>
+
+            <p class="text-gray-600 leading-7 mb-5">
+              Explore the canopy trail experience, where nature meets adventure high above the forest floor in green, peaceful surroundings.
+            </p>
+
+            <button
+              class="w-full bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition duration-300"
+            >
+              Discover More
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
 </template>
+
+<script setup>
+const missionImage = new URL('../assets/akagera national park.jpg', import.meta.url).href
+const valuesImage = new URL('../assets/virunga.jpg', import.meta.url).href
+const tourImage = new URL('../assets/culture.jpg', import.meta.url).href
+const canopyImage = new URL('../assets/Canopy a.jpg', import.meta.url).href
+</script>
+```
