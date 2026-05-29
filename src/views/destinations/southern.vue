@@ -23,17 +23,15 @@
 <script setup>
 import { ref } from 'vue'
 import Lightbox from '../../components/Lightbox.vue'
-
-const south = new URL('../../assets/south.jpg', import.meta.url).href
-const southern = new URL('../../assets/southern.jpg', import.meta.url).href
-const southernProvince = new URL('../../assets/southern province.jpg', import.meta.url).href
-const southernPro = new URL('../../assets/sourthern pro.jpg', import.meta.url).href
+import south from '../../assets/south.jpg'
+import southern from '../../assets/southern.jpg'
+import southernProvince from '../../assets/southern province.jpg'
 
 const photos = [
   { title: 'Southern Bay', caption: 'Beautiful southern landscapes with warm light.', src: south, full: south, alt: 'Southern bay' },
   { title: 'Southern Trail', caption: 'A scenic southern hiking trail and open fields.', src: southern, full: southern, alt: 'Southern trail' },
   { title: 'Province Views', caption: 'Rich textures and local scenery of the Southern province.', src: southernProvince, full: southernProvince, alt: 'Southern province view' },
-  { title: 'Southern Pro', caption: 'Portrait-style capture of southern life and terrain.', src: southernPro, full: southernPro, alt: 'Southern pro' }
+  { title: 'Southern Pro', caption: 'Portrait-style capture of southern life and terrain.', src: southernProvince, full: southernProvince, alt: 'Southern pro' }
 ]
 
 const showLightbox = ref(false)
