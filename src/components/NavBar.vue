@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import logo from '../assets/tour.jpg'
 
 // Track state of each dropdown menu
@@ -106,9 +106,4 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocClick))
       <li><RouterLink to="/contacts" class="hover:text-yellow-300">Contacts</RouterLink></li>
     </ul>
   </nav>
-
-  <!-- This is where your clicked pages will render dynamically -->
-  <main class="p-8">
-    <RouterView />
-  </main>
 </template>
