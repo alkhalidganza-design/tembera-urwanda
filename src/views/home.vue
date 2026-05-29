@@ -1,8 +1,19 @@
 <template>
-  <section class="min-h-[70vh] flex flex-col items-center justify-center text-center">
+  
+   <!-- hero -->
+     <section class="relative h-screen  bg-cover bg-center flex items-center justify-center text-white"
+     
 
-    <h1 class="text-5xl md:text-6xl font-extrabold text-green-600 tracking-wide">
-      TEMBERA U RWANDA PROJECT
-    </h1>
-  </section>
-</template>.
+       style="background-image: url('/src/assets/your-image.jpg');"
+       >
+       <div class="bg-black/40 bg-opacity-50 absolute insert-0 ">
+
+       </div>
+<div class="relative text-center px-4"> 
+  <h1 class="text-5xl font-bold mb-4">Welcome to Rwanda</h1>
+  <p class="text-xl mb-8 text-green-300 ">the Land of a thousand Hills</p>
+</div>
+   
+    </section>
+  
+</template>

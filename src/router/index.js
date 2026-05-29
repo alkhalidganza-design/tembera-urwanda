@@ -1,4 +1,4 @@
- import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/home.vue'
 import About from '../views/about.vue'
 import Contact from '../views/contact.vue'
@@ -24,11 +24,51 @@ const routes = [
         path: '/services',
         name: 'service',
         component: Services,
+    },
+    
+    // --- GALLERY DROPDOWN ROUTES ---
+    {
+        path: '/gallery/photos',
+        name: 'photos',
+        component: () => import('../views/Gallery/photos.vue')
+    },
+    {
+        path: '/gallery/videos',
+        name: 'videos',
+        component: () => import('../views/Gallery/videos.vue')
+    },
+
+    // --- DESTINATION DROPDOWN ROUTES ---
+    {
+        path: '/dest/northern',
+        name: 'northern',
+        component: () => import('../views/destinations/Northern.vue')
+    },
+    {
+        path: '/dest/southern',
+        name: 'southern',
+        component: () => import('../views/destinations/southern.vue')
+    },
+    {
+        path: '/dest/eastern',
+        name: 'eastern',
+        component: () => import('../views/destinations/Eastern.vue')
+    },
+    {
+        path: '/dest/western',
+        name: 'western',
+        component: () => import('../views/destinations/Western.vue')
+    },
+    {
+        path: '/dest/kigali',
+        name: 'kigali',
+        component: () => import('../views/destinations/kigali city.vue')
     }
 ];
 
- const router = createRouter({
-     history: createWebHashHistory(),
-     routes,
- });
- export default router;
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes,
+});
+
+export default router;
